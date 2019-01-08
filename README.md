@@ -8,6 +8,15 @@ Spark Digital
 
 Contact: Surai Lopepe
 
+TrueLogic Software
+-----
+[Web](https://www.truelogicsoftware.com/careers/)
+- *Date:* Dec 11
+- *Contact:* Veronica Giuffre
+- *Position:* Senior Fullstack Developer React/Node
+- *Type:* Full Time-Long Term- On Site-Palermo
+- *Reply:* Linkedin message
+- *Rank:* 5
 
 Corgibytes
 -----
