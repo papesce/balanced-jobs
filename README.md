@@ -1,12 +1,21 @@
 # List of Jobs in 2019
 
+AgileEngine
+-----
+[Web](https://agileengine.com)
+
+- *Salary:* in USD
+- *Contact:* Luisina Marconi (linkedin)
+- *Type:* React con ingles intermedio
+- *Rank:* 8
+
 Spark Digital
 -----
 
 [Linkedin](https://www.linkedin.com/company/sparkdigital/)
 [Web](https://sparkdigital.com/careers/open-positions)
 
-Contact: Surai Lopepe
+- *Contact:* Surai Lopepe (linkedin)
 
 TrueLogic Software
 -----
