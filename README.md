@@ -1,4 +1,8 @@
 
+# Balanced Jobs App
+
+This tool stores offers and give you an score based on your work-life goals. 
+
 # Links
 
 - [Job Sites](/JOBSITES.md)
