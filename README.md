@@ -3,6 +3,8 @@
 
 This tool stores offers and give you an score based on your work-life goals. 
 
+Dev Instance: https://balanced-jobs-dev.herokuapp.com
+
 # Links
 
 - [Job Sites](/JOBSITES.md)
