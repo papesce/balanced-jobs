@@ -8,6 +8,7 @@ import {
   Redirect
 } from "react-router-dom";
 import NoMatch from "./components/NoMatch";
+import Home from "./containers/Home";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -25,9 +26,9 @@ function App() {
   // const classes = useStyles();
   return (
     <Router>
-     <Switch>
+      <Switch>
           <Route exact path="/">
-            <Redirect to="jobs/new-offer" />
+            <Home/>
           </Route>
           <Route exact path="/jobs/new-offer">
             <NewOffer />
@@ -35,8 +36,8 @@ function App() {
           <Route path="*">
             <NoMatch />
           </Route>
-       </Switch>
-   </Router>
+        </Switch>
+    </Router>
   );
 }
 
