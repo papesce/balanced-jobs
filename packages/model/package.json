@@ -1,0 +1,24 @@
+{
+    "name": "balanced-jobs-model",
+    "version": "0.4.0",
+    "description": "Balanced Jobs App Model",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+      "types": "rm -rf ./dist && tsc",
+      "test": "jest --watch"
+    },
+    "author": " (Pablo Pesce)",
+    "license": "MIT",
+    "devDependencies": {
+      "@types/jest": "^25.1.1",
+      "@types/mongoose": "^5.7.0",
+      "jest": "24.9.0",
+      "ts-jest": "^25.2.0",
+      "typescript": "^3.7.5"
+    },
+    "dependencies": {
+      "mongoose": "^5.8.11"
+    }
+  }
+  
