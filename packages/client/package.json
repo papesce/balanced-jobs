@@ -16,6 +16,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "recharts": "^1.8.5",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -49,6 +50,7 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/preset-create-react-app": "^2.1.1",
     "@storybook/react": "^5.3.18",
-    "@types/react-router-dom": "^5.1.5"
+    "@types/react-router-dom": "^5.1.5",
+    "@types/recharts": "^1.8.10"
   }
 }

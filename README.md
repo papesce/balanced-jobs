@@ -5,6 +5,11 @@ This tool stores offers and give you an score based on your work-life goals.
 
 Dev Instance: https://balanced-jobs-dev.herokuapp.com
 
+
+# custom installs:
+- yarn add recharts 
+- yarn add @types/recharts --dev
+
 # Links
 
 - [Job Sites](/JOBSITES.md)
