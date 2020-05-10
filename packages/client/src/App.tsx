@@ -1,14 +1,12 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import NewOffer from './containers/NewOffer'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
 } from "react-router-dom";
 import NoMatch from "./components/NoMatch";
-import Home from "./containers/Home";
+import Home from "./containers/home/Home";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
