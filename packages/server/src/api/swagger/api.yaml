@@ -1,0 +1,27 @@
+swagger: '2.0'
+info:
+  description: Balanced Jobs App
+  title: balanced-jobs-app
+  version: 1.0.0
+basePath: /api/v1
+paths:
+  /new-offer:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: Returns all routines
+      tags:
+        - Jobs
+      description: Fetch all routines
+  /spec:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: Return the API specification
+      tags:
+        - Specification
+tags:
+  - name: Jobs
+

@@ -29,7 +29,7 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/jobs/new-offer">
+          <Route exact path="/offer/:id">
             <NewOffer />
           </Route>
           <Route path="*">
