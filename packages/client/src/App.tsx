@@ -1,43 +1,43 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import NewOffer from './containers/NewOffer'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
+import NewOffer from "./containers/NewOffer";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NoMatch from "./components/NoMatch";
-import Home from "./containers/Home";
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   menuButton: {
-//     marginRight: theme.spacing(2),
-//   },
-//   title: {
-//     flexGrow: 1,
-//   },
-// }));
+import Home from "./containers/home/Home";
+import ErrorMessage from "./components/errors/ErrorMessage";
+import { IRootState } from "./redux/configureStore";
+import { useSelector, useDispatch } from "react-redux";
+import { INotificationState } from "./redux/reducer.notification";
+import { clearNotification } from "./redux/actions.notification";
 
 function App() {
-  // const classes = useStyles();
+  const dispatch = useDispatch();
+  const notification: INotificationState = useSelector(
+    (state: IRootState) => state.notificationState
+  );
+  const handleClose = () => {
+    dispatch(clearNotification());
+  };
   return (
-    <Router>
-      <Switch>
+    <>
+      <ErrorMessage
+        open={notification.enabled}
+        message={notification.text}
+        handleClose={handleClose}
+      />
+      <Router>
+        <Switch>
           <Route exact path="/">
-            <Home/>
+            <Home />
           </Route>
-          <Route exact path="/jobs/new-offer">
+          <Route exact path="/offer/:id">
             <NewOffer />
           </Route>
           <Route path="*">
             <NoMatch />
           </Route>
         </Switch>
-    </Router>
+      </Router>
+    </>
   );
 }
 

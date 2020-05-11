@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: balanced-jobs-app
+  description: Balanced Jobs App
+tags:
+  - name: Jobs
+paths:
+  /new-offer:
+    get:
+      tags:
+        - Jobs
+      description: Fetch all routines
+      responses:
+        "200":
+          description: Returns all routines
+  /spec:
+    get:
+      tags:
+        - Specification
+      responses:
+        "200":
+          description: Return the API specification
+servers:
+  - url: /api/v1

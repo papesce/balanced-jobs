@@ -5,9 +5,8 @@ import express from "express";
 
 const api = express.Router();
 
-api.get("/offer/newOffer", async (req: Request, res: Response, next: NextFunction) => {
+api.get(`/new-offer`, async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { exerciseId } = req.params;
         // const exercise: IExercise = await ExerciseService.getExerciseById(exerciseId);
         // save to the DB and return
         const newOffer: IOffer = {

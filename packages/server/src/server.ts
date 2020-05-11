@@ -7,6 +7,9 @@ import os from "os";
 import cookieParser from "cookie-parser";
 import logger from "./common/logger";
 import Mongoose from "./common/mongoose";
+// import swaggerUi from 'swagger-ui-express';
+// import specs from './swagger.config';
+import swaggerify from "./api/swagger";
 
 const app = express();
 const mongoose = new Mongoose();
@@ -18,11 +21,11 @@ export default class ExpressServer {
       app.use(bodyParser.urlencoded({ extended: true }));
       app.use(cookieParser(process.env.SESSION_SECRET));
       app.use(express.static(`${root}/public`)); 
-      
+      // app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
     }
   
     router(routes: (app: Application) => void): ExpressServer {
-      // swaggerify(app, routes);
+      swaggerify(app, routes);
       return this;
     }
   
