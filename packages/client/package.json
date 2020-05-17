@@ -27,7 +27,7 @@
     "build": "react-scripts build && ./build.sh",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
+    "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
@@ -51,7 +51,7 @@
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addons": "^5.3.18",
-    "@storybook/preset-create-react-app": "^2.1.1",
+    "@storybook/preset-create-react-app": "^2.1.2",
     "@storybook/react": "^5.3.18",
     "@types/react-redux": "^7.1.8",
     "@types/react-router-dom": "^5.1.5",
