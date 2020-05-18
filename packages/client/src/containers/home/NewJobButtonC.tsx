@@ -22,7 +22,7 @@ export const NewJobButtonC = () => {
       dispatch(addNotification("Error creating Job Offer"));
     }
     setCreating(false);
-  }, [creating, dispatch]);
+  }, [creating, history, dispatch]);
 
   return (
     <NewJobButton creating={creating} handleButtonClick={handleButtonClick} />

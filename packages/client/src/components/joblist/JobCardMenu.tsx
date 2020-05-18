@@ -7,14 +7,27 @@ import "./JobCardMenu.css";
 
 const ITEM_HEIGHT = 48;
 
-const JobCardMenu = () => {
+interface IJobCardMenuProps {
+  id: string;
+  handleDelete: (id: string) => void;
+  handleEdit: (id: string) => void;
+}
+
+const JobCardMenu = (props: IJobCardMenuProps) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
-
+  const handleEdit = () => {
+    props.handleEdit(props.id)
+    handleClose();
+  }
+  const handleDelete = () => {
+    props.handleDelete(props.id)
+    handleClose();
+  }
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -42,10 +55,10 @@ const JobCardMenu = () => {
           },
         }}
       >
-        <MenuItem selected={false} onClick={handleClose}>
+        <MenuItem selected={false} onClick={handleEdit}>
           Edit
         </MenuItem>
-        <MenuItem selected={false} onClick={handleClose}>
+        <MenuItem selected={false} onClick={handleDelete}>
           <div className="jobcard-delete-menuitem"> Delete </div>
         </MenuItem>
       </Menu>

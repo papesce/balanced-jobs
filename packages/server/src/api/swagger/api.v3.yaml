@@ -10,10 +10,18 @@ paths:
     get:
       tags:
         - Jobs
-      description: Fetch all routines
+      description: creates a new offer
       responses:
         "200":
-          description: Returns all routines
+          description: return the new offer id
+  /offers:
+    get:
+      tags:
+        - Jobs
+      description: Fetch all offers
+      responses:
+        "200":
+          description: Returns all offers
   /spec:
     get:
       tags:

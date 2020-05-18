@@ -4,8 +4,17 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import JobCardMenu from "./JobCardMenu";
 import "./JobCardGrid.css";
+import { IOffer } from "balanced-jobs-model";
 
-const JobCardGrid = () => {
+interface IJobCardGrid {
+  offer: IOffer;
+  handleEditJob: (id: string) => void;
+  handleDeleteJob: (id: string) => void;
+}
+
+const JobCardGrid = (props: IJobCardGrid) => {
+  const { handleEditJob, handleDeleteJob } = props;
+  const { title, description, _id } = props.offer;
   return (
     <div>
       <Grid container>
@@ -15,16 +24,22 @@ const JobCardGrid = () => {
             color="textSecondary"
             gutterBottom
           >
-            Full Stack Software Engineer
+            {title}
           </Typography>
-          <Typography variant="body2" component="p">
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
+          <Typography
+            className="jobcardgrid-desc"
+            variant="body2"
+            component="p"
+          >
+            {description}
           </Typography>
         </Grid>
         <Grid item>
-          <JobCardMenu />
+          <JobCardMenu
+            id={_id}
+            handleEdit={handleEditJob}
+            handleDelete={handleDeleteJob}
+          />
         </Grid>
       </Grid>
     </div>

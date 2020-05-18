@@ -10,10 +10,19 @@ paths:
       parameters: []
       responses:
         '200':
-          description: Returns all routines
+          description: return the new offer id
       tags:
         - Jobs
-      description: Fetch all routines
+      description: creates a new offer
+  /offers:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: Returns all offers
+      tags:
+        - Jobs
+      description: Fetch all offers
   /spec:
     get:
       parameters: []

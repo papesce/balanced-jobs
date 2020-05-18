@@ -2,7 +2,7 @@ import React from "react";
 import NewOffer from "./containers/NewOffer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NoMatch from "./components/NoMatch";
-import Home from "./containers/home/Home";
+import Home from "./containers/home/HomeC";
 import ErrorMessage from "./components/errors/ErrorMessage";
 import { IRootState } from "./redux/configureStore";
 import { useSelector, useDispatch } from "react-redux";
