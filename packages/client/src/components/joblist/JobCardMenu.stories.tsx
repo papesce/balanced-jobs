@@ -6,7 +6,15 @@ export default {
   title: "JobCard/JobCardMenu",
 };
 
-export const jobCardMenu = () => (
+export const visible = () => (
+  <JobCardMenu
+    id={"1"}
+    handleEdit={action("edit")}
+    handleDelete={action("delete")}
+    visible
+  />
+);
+export const hidden = () => (
   <JobCardMenu
     id={"1"}
     handleEdit={action("edit")}

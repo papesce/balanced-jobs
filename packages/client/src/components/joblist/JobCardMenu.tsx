@@ -11,9 +11,11 @@ interface IJobCardMenuProps {
   id: string;
   handleDelete: (id: string) => void;
   handleEdit: (id: string) => void;
+  visible?: boolean;
 }
 
 const JobCardMenu = (props: IJobCardMenuProps) => {
+  const { visible = false } = props;
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -21,13 +23,13 @@ const JobCardMenu = (props: IJobCardMenuProps) => {
     setAnchorEl(event.currentTarget);
   };
   const handleEdit = () => {
-    props.handleEdit(props.id)
+    props.handleEdit(props.id);
     handleClose();
-  }
+  };
   const handleDelete = () => {
-    props.handleDelete(props.id)
+    props.handleDelete(props.id);
     handleClose();
-  }
+  };
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -40,7 +42,11 @@ const JobCardMenu = (props: IJobCardMenuProps) => {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <MoreVertIcon />
+        <MoreVertIcon
+          className={
+            visible ? "more-vert-icon-visible" : "more-vert-icon-hidden"
+          }
+        />
       </IconButton>
       <Menu
         id="long-menu"
@@ -64,7 +70,6 @@ const JobCardMenu = (props: IJobCardMenuProps) => {
       </Menu>
     </div>
   );
-}
-
+};
 
 export default JobCardMenu;

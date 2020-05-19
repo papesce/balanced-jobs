@@ -15,8 +15,10 @@ interface IJobCardGrid {
 const JobCardGrid = (props: IJobCardGrid) => {
   const { handleEditJob, handleDeleteJob } = props;
   const { title, description, _id } = props.offer;
+  const [visible, setVisible] = React.useState<boolean>(false);
   return (
-    <div>
+    <div onMouseEnter={()=>setVisible(true)} 
+      onMouseLeave={() => setVisible(false)}>
       <Grid container>
         <Grid item xs={11}>
           <Typography
@@ -39,6 +41,7 @@ const JobCardGrid = (props: IJobCardGrid) => {
             id={_id}
             handleEdit={handleEditJob}
             handleDelete={handleDeleteJob}
+            visible={visible}
           />
         </Grid>
       </Grid>
