@@ -1,7 +1,8 @@
 
 export interface IOfferDao {
     _id: any;
-    name: string;
+    title: string;
+    description: string;
     freeText: string;
     createdAt?: string;
     updatedAt?: string;
@@ -23,6 +24,7 @@ export interface IOfferDao {
 
 export interface IOffer {
   _id: string,
-  name: string,
+  title: string,
+  description: string,
   freeText: string
 }

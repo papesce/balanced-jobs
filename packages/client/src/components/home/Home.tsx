@@ -8,10 +8,12 @@ import { IOffer } from "balanced-jobs-model";
 
 interface IHomeProps {
   offers: IOffer[];
+  editOffer: (id: string) => void;
+  deleteOffer: (id: string) => void;
 }
 
 const Home = (props: IHomeProps) => {
-  const { offers } = props;
+  const { offers, editOffer, deleteOffer } = props;
   return (
     <div>
       <Grid container spacing={2}>
@@ -29,8 +31,8 @@ const Home = (props: IHomeProps) => {
           <Paper className="jobs-table-paper" elevation={3}>
             <JobList
               offers={offers}
-              editOffer={() => {}}
-              deleteOffer={() => []}
+              editOffer={editOffer}
+              deleteOffer={deleteOffer}
             />
           </Paper>
         </Grid>

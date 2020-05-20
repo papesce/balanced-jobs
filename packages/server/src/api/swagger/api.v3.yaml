@@ -7,13 +7,28 @@ tags:
   - name: Jobs
 paths:
   /new-offer:
-    get:
+    post:
       tags:
         - Jobs
       description: creates a new offer
       responses:
         "200":
           description: return the new offer id
+  /offer/{offerId}:
+    delete:
+      tags:
+        - Jobs
+      description: Deletes an offer
+      parameters:
+        - in: path
+          name: offerId
+          schema:
+            type: string
+          required: true
+          example: 5a3eb620260b8700140e500e
+      responses:
+        "200":
+          description: Returns all offers
   /offers:
     get:
       tags:

@@ -1,38 +1,38 @@
-import { IOffer } from "balanced-jobs-model";
+import OfferService from './../services/offers';
+import { IOffer, IDeleteOfferResponse } from "balanced-jobs-model";
 import { Request, Response, NextFunction } from "express";
 import * as HttpStatus from "http-status-codes";
 import express from "express";
 
 const api = express.Router();
 
-api.get(`/new-offer`, async (req: Request, res: Response, next: NextFunction) => {
+api.post(`/new-offer`, async (req: Request, res: Response, next: NextFunction) => {
     try {
-        // const exercise: IExercise = await ExerciseService.getExerciseById(exerciseId);
-        // save to the DB and return
-        const newOffer: IOffer = {
-            _id: '8',
-            title: 't',
-            description: 'd',
-            freeText:''
-
-        }
+        const newOffer: IOffer = await OfferService.getNewOffer();
         return res.status(HttpStatus.OK).json(newOffer);
   } catch (err) {
     return next(err);
   }
 });
 
+api.delete('/offer/:offerId', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+      const { offerId } = req.params;
+      const deletedOffer: IOffer = await OfferService.deleteOffer(offerId);
+      const offers: IOffer[] = await OfferService.getOffers();
+      const response: IDeleteOfferResponse = {
+        deletedOffer,
+        offers
+      }
+      return res.status(HttpStatus.OK).json(response);
+} catch (err) {
+  return next(err);
+}
+});
+
 api.get(`/offers`, async (req: Request, res: Response, next: NextFunction) => {
   try {
-      // const exercise: IExercise = await ExerciseService.getExerciseById(exerciseId);
-      // save to the DB and return
-      const offers: IOffer[] = [{
-          _id: '8',
-          title: 't',
-          description: 'd',
-          freeText:''
-
-      }];
+      const offers: IOffer[] = await OfferService.getOffers();      
       return res.status(HttpStatus.OK).json(offers);
 } catch (err) {
   return next(err);

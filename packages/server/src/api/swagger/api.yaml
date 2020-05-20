@@ -6,7 +6,7 @@ info:
 basePath: /api/v1
 paths:
   /new-offer:
-    get:
+    post:
       parameters: []
       responses:
         '200':
@@ -14,6 +14,20 @@ paths:
       tags:
         - Jobs
       description: creates a new offer
+  '/offer/{offerId}':
+    delete:
+      parameters:
+        - in: path
+          name: offerId
+          required: true
+          type: string
+          x-example: 5a3eb620260b8700140e500e
+      responses:
+        '200':
+          description: Returns all offers
+      tags:
+        - Jobs
+      description: Deletes an offer
   /offers:
     get:
       parameters: []
