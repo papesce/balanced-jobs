@@ -23,7 +23,9 @@ export default class SpiderJobs extends Component {
       }
     ];
     return (
-      <RadarChart cx={300} cy={250} outerRadius={150} width={500} height={500} data={data}>
+      <RadarChart cx={250} cy={200} outerRadius={90} 
+      width={500} 
+      height={400} data={data}>
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" />
         <PolarRadiusAxis />

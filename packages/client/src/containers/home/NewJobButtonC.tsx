@@ -14,7 +14,9 @@ export const NewJobButtonC = () => {
   const handleButtonClick = useCallback(async () => {
     if (creating) return;
     setCreating(true);
-    const resp: Response = await fetch(`${API_VERSION}/new-offer`);
+    const resp: Response = await fetch(`${API_VERSION}/new-offer`, {
+      method: "POST",
+    });
     if (resp.ok) {
       const offer: IOffer = await resp.json();
       history.push(`offer/${offer._id}`);
@@ -22,7 +24,7 @@ export const NewJobButtonC = () => {
       dispatch(addNotification("Error creating Job Offer"));
     }
     setCreating(false);
-  }, [creating, dispatch]);
+  }, [creating, history, dispatch]);
 
   return (
     <NewJobButton creating={creating} handleButtonClick={handleButtonClick} />

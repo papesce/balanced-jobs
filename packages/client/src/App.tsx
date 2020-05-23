@@ -1,8 +1,8 @@
 import React from "react";
-import NewOffer from "./containers/NewOffer";
+import OfferC from "./containers/offer/OfferC";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NoMatch from "./components/NoMatch";
-import Home from "./containers/home/Home";
+import HomeC from "./containers/home/HomeC";
 import ErrorMessage from "./components/errors/ErrorMessage";
 import { IRootState } from "./redux/configureStore";
 import { useSelector, useDispatch } from "react-redux";
@@ -27,10 +27,10 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <HomeC />
           </Route>
-          <Route exact path="/offer/:id">
-            <NewOffer />
+          <Route exact path="/offer/:offerId">
+            <OfferC />
           </Route>
           <Route path="*">
             <NoMatch />

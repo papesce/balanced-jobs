@@ -7,13 +7,72 @@ tags:
   - name: Jobs
 paths:
   /new-offer:
+    post:
+      tags:
+        - Jobs
+      description: creates a new offer
+      responses:
+        "200":
+          description: return the new offer id
+  /offer/{offerId}:
     get:
       tags:
         - Jobs
-      description: Fetch all routines
+      description: Returns the offer with id offerId
+      parameters:
+        - in: path
+          name: offerId
+          schema:
+            type: string
+          required: true
+          example: 5a3eb620260b8700140e500e
       responses:
         "200":
-          description: Returns all routines
+          description: Returns the offer with id offerId    
+    patch: 
+      tags:
+        - Jobs
+      description: Updates the offer
+      parameters:
+        - in: path
+          name: offerId
+          schema:
+            type: string
+          required: true
+          example: 5a3eb620260b8700140e500e
+      requestBody:
+          description: the ISerieUpdate data
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                description: The updated object
+      responses:
+        "200":
+          description: Returns the offer with id offerId  
+    delete:
+      tags:
+        - Jobs
+      description: Deletes an offer
+      parameters:
+        - in: path
+          name: offerId
+          schema:
+            type: string
+          required: true
+          example: 5a3eb620260b8700140e500e
+      responses:
+        "200":
+          description: Returns all offers
+  /offers:
+    get:
+      tags:
+        - Jobs
+      description: Fetch all offers
+      responses:
+        "200":
+          description: Returns all offers
   /spec:
     get:
       tags:

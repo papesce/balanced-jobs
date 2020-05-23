@@ -9,6 +9,7 @@ Dev Instance: https://balanced-jobs-dev.herokuapp.com
 # custom installs:
 - yarn add recharts 
 - yarn add @types/recharts --dev
+-- yarn add @storybook/preset-create-react-app --dev
 
 # Links
 

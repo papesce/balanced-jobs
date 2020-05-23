@@ -1,0 +1,10 @@
+.jobcard-delete-menuitem {
+  color: #e91e63;
+}
+
+.more-vert-icon-hidden {
+  visibility: hidden;
+}
+.more-vert-icon-visible {
+  visibility: visible;
+}
