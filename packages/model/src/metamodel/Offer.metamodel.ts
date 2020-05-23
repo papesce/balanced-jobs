@@ -28,3 +28,4 @@ export interface IOffer {
   description: string,
   freeText: string
 }
+

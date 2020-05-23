@@ -28,7 +28,29 @@ paths:
           example: 5a3eb620260b8700140e500e
       responses:
         "200":
-          description: Returns the offer with id offerId       
+          description: Returns the offer with id offerId    
+    patch: 
+      tags:
+        - Jobs
+      description: Updates the offer
+      parameters:
+        - in: path
+          name: offerId
+          schema:
+            type: string
+          required: true
+          example: 5a3eb620260b8700140e500e
+      requestBody:
+          description: the ISerieUpdate data
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                description: The updated object
+      responses:
+        "200":
+          description: Returns the offer with id offerId  
     delete:
       tags:
         - Jobs

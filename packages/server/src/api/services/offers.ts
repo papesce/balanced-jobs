@@ -1,6 +1,6 @@
 import { OfferDocumentModel } from '../mongoose/offer.mongoose';
 import logger from "../../common/logger";
-import { IOfferDao, IOffer, getOfferFromDao, getOffersFromDao } from "balanced-jobs-model";
+import { IOfferDao, IOffer, getOfferFromDao, getOffersFromDao, IOfferUpdate } from "balanced-jobs-model";
 
 export class OfferService {
   getOffers = async (): Promise<IOffer[]> =>  {
@@ -30,6 +30,16 @@ export class OfferService {
   getOffer = async (offerId: string): Promise<IOffer | null> => {
     const offerDao: IOfferDao | null = await OfferDocumentModel.findOne({ _id: offerId }).lean().exec();
     return offerDao ? getOfferFromDao(offerDao) : null;
+  }
+  updateOffer = async (offerId: string,  offerUpdate: IOfferUpdate) : Promise<IOffer | null> => {
+    const offerDao: IOfferDao = await OfferDocumentModel.findOneAndUpdate(
+      { _id: offerId },
+      offerUpdate,
+      { new: true }
+    )
+      .lean()
+      .exec();
+      return offerDao ? getOfferFromDao(offerDao) : null;
   }
 }
 

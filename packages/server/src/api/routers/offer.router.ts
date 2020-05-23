@@ -1,4 +1,4 @@
-import { IOfferResponse } from './../../../../model/dist/api/Offer.api.d';
+import { IOfferResponse, IUpdateOfferRequest } from './../../../../model/dist/api/Offer.api.d';
 import OfferService from './../services/offers';
 import { IOffer, IDeleteOfferResponse } from "balanced-jobs-model";
 import { Request, Response, NextFunction } from "express";
@@ -34,6 +34,17 @@ api.get('/offer/:offerId', async (req: Request, res: Response, next: NextFunctio
   try {
     const { offerId } = req.params;
     const offer: IOffer | null  = await OfferService.getOffer(offerId);
+    const response: IOfferResponse = {offer};
+    return res.status(HttpStatus.OK).json(response);
+  } catch (err) {
+    return next(err);
+  }
+});
+api.patch('/offer/:offerId', async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { offerId } = req.params;
+    const body: IUpdateOfferRequest = req.body;
+    const offer:IOffer = await OfferService.updateOffer(offerId, body.offerUpdate);
     const response: IOfferResponse = {offer};
     return res.status(HttpStatus.OK).json(response);
   } catch (err) {

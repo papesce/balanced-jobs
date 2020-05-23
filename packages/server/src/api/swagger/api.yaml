@@ -41,6 +41,28 @@ paths:
       tags:
         - Jobs
       description: Returns the offer with id offerId
+    patch:
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: offerId
+          required: true
+          type: string
+          x-example: 5a3eb620260b8700140e500e
+        - description: the ISerieUpdate data
+          in: body
+          name: body
+          required: true
+          schema:
+            description: The updated object
+            type: object
+      responses:
+        '200':
+          description: Returns the offer with id offerId
+      tags:
+        - Jobs
+      description: Updates the offer
   /offers:
     get:
       parameters: []
