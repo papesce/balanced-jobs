@@ -1,6 +1,4 @@
 import React from "react";
-import "./HomeC.css";
-
 import { NewJobButtonC } from "./NewJobButtonC";
 import InitialHeader from "../../components/headerBar/InitialHeader";
 import { API_VERSION } from "../../redux/constants";
@@ -36,9 +34,7 @@ const HomeC = () => {
   return (
     <>
       <InitialHeader handleLogout={() => {}} />
-      <div className="new-job">
-        <NewJobButtonC />
-      </div>
+      <NewJobButtonC />
       <Home
         offers={offers}
         editOffer={editOffer}

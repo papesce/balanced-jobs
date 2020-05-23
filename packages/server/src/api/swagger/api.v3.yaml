@@ -15,6 +15,20 @@ paths:
         "200":
           description: return the new offer id
   /offer/{offerId}:
+    get:
+      tags:
+        - Jobs
+      description: Returns the offer with id offerId
+      parameters:
+        - in: path
+          name: offerId
+          schema:
+            type: string
+          required: true
+          example: 5a3eb620260b8700140e500e
+      responses:
+        "200":
+          description: Returns the offer with id offerId       
     delete:
       tags:
         - Jobs

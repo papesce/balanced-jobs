@@ -28,6 +28,19 @@ paths:
       tags:
         - Jobs
       description: Deletes an offer
+    get:
+      parameters:
+        - in: path
+          name: offerId
+          required: true
+          type: string
+          x-example: 5a3eb620260b8700140e500e
+      responses:
+        '200':
+          description: Returns the offer with id offerId
+      tags:
+        - Jobs
+      description: Returns the offer with id offerId
   /offers:
     get:
       parameters: []

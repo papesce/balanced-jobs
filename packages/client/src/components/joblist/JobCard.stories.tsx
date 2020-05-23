@@ -4,7 +4,7 @@ import { offer1 } from "./Job.utils";
 import { action } from "@storybook/addon-actions";
 
 export default {
-  title: "JobCard/JobCard",
+  title: "Home/Home/JobCard",
 };
 
 export const jobCard = () => (

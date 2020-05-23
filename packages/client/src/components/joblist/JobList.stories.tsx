@@ -4,7 +4,7 @@ import { offers1, offers2, offers5, offers6 } from "./Job.utils";
 import { action } from "@storybook/addon-actions";
 
 export default {
-  title: "JobList",
+  title: "Home/Home/JobList",
 };
 
 export const loading = () => (

@@ -3,7 +3,7 @@ import NewJobButton from "./NewJobButton";
 import { action } from "@storybook/addon-actions";
 
 export default {
-  title: "NewJobButton"
+  title: "Home/HomeC/NewJobButton"
 };
 
 export const initial = () => (

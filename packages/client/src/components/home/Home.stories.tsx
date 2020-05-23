@@ -4,7 +4,7 @@ import { offers1 } from "../joblist/Job.utils";
 import { action } from "@storybook/addon-actions";
 
 export default {
-  title: "Home"
+  title: "Home/HomeC"
 };
 
 

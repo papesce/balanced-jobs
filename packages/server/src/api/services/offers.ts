@@ -27,6 +27,11 @@ export class OfferService {
       const offer: IOffer = getOfferFromDao(offerDao);
       return offer;
   }
+  getOffer = async (offerId: string): Promise<IOffer | null> => {
+    const offerDao: IOfferDao | null = await OfferDocumentModel.findOne({ _id: offerId }).lean().exec();
+    return offerDao ? getOfferFromDao(offerDao) : null;
+  }
 }
+
 
 export default new OfferService();

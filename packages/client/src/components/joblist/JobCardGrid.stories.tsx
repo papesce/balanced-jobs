@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import { offer1 } from "./Job.utils";
 
 export default {
-  title: "JobCard/JobCardGrid",
+  title: "Home/JobCard/JobCardGrid",
 };
 
 
